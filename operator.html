@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score Operator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="storage.js" defer></script>
+    <script src="operator.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">CRICKET SCORE MANAGEMENT</p>
+                <h1>Operator dashboard</h1>
+            </div>
+            <a class="text-link" href="index.html" target="_blank" rel="noopener">Open viewer ↗</a>
+        </header>
+
+        <section class="panel operator-score" aria-label="Current score">
+            <div>
+                <p id="operator-teams" class="team-summary">No match created</p>
+                <p class="compact-score"><span id="total-runs">0</span> / <span id="wickets">0</span></p>
+            </div>
+            <div class="operator-stats">
+                <div><span class="stat-label">Overs</span><strong id="overs">0.0</strong></div>
+                <div><span class="stat-label">Extras</span><strong id="extras">0</strong></div>
+                <span id="match-status" class="status-badge">Not started</span>
+            </div>
+        </section>
+
+        <p id="operator-message" class="message" role="status">Loading saved match...</p>
+
+        <div class="dashboard-grid">
+            <section class="panel">
+                <h2>Match information</h2>
+                <p class="small-note">Enter all four names. Save details or click a scoring button to start.</p>
+                <form id="match-form">
+                    <label for="batting-team">Batting team</label>
+                    <input id="batting-team" name="battingTeam" type="text" maxlength="60" required autocomplete="off">
+                    <label for="opposition-team">Opposition team</label>
+                    <input id="opposition-team" name="oppositionTeam" type="text" maxlength="60" required
+                        autocomplete="off">
+                    <label for="batsman">Current batsman</label>
+                    <input id="batsman" name="batsman" type="text" maxlength="60" required autocomplete="off">
+                    <label for="bowler">Current bowler</label>
+                    <input id="bowler" name="bowler" type="text" maxlength="60" required autocomplete="off">
+                    <button id="save-details" class="button primary full-width" type="submit">Save match
+                        information</button>
+                </form>
+            </section>
+
+            <section class="panel">
+                <h2>Scoring controls</h2>
+                <p class="small-note">Each run or wicket button records one legal delivery.</p>
+                <div class="scoring-grid">
+                    <button class="button scoring-button" type="button" data-delivery="0">0<span>Dot
+                            ball</span></button>
+                    <button class="button scoring-button" type="button" data-delivery="1">1<span>Run</span></button>
+                    <button class="button scoring-button" type="button" data-delivery="2">2<span>Runs</span></button>
+                    <button class="button scoring-button" type="button" data-delivery="3">3<span>Runs</span></button>
+                    <button class="button scoring-button boundary" type="button"
+                        data-delivery="4">4<span>Runs</span></button>
+                    <button class="button scoring-button boundary" type="button"
+                        data-delivery="6">6<span>Runs</span></button>
+                    <button class="button scoring-button wicket" type="button" data-delivery="W">Wicket<span>+1 legal
+                            ball</span></button>
+                    <button class="button scoring-button extra" type="button" data-delivery="Wd">Wide<span>+1
+                            extra</span></button>
+                    <button class="button scoring-button extra" type="button" data-delivery="Nb">No Ball<span>+1
+                            extra</span></button>
+                </div>
+                <p class="small-note">Wides and no-balls add one run only and do not count as legal balls. Update player
+                    names manually when needed.</p>
+                <div class="match-actions">
+                    <button id="end-innings" class="button" type="button">End innings</button>
+                    <button id="reset-match" class="button danger" type="button">Start new / Reset match</button>
+                </div>
+            </section>
+        </div>
+        <footer class="page-footer">One innings at a time · Saved locally in this browser · Refresh the viewer after
+            scoring</footer>
+    </main>
+    <script type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+        integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw=="
+        data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="storage.js" defer></script>
+    <script src="viewer.js" defer></script>
+</head>
+
+<body>
+    <main class="container viewer-container">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">CRICKET SCORE MANAGEMENT</p>
+                <h1>Match scoreboard</h1>
+            </div>
+            <span class="page-label">Viewer · Read only</span>
+        </header>
+
+        <p id="viewer-message" class="message" role="status">Loading saved match...</p>
+
+        <section id="scoreboard" class="panel scoreboard" aria-label="Current match score" hidden>
+            <div class="scoreboard-heading">
+                <p class="eyebrow">CURRENT INNINGS</p>
+                <span id="match-status" class="status-badge"></span>
+            </div>
+            <h2 id="batting-team"></h2>
+            <p class="opposition">vs <span id="opposition-team"></span></p>
+
+            <div class="main-score">
+                <span id="total-runs">0</span><span class="score-divider"> / </span><span id="wickets">0</span>
+            </div>
+            <p class="score-caption">RUNS / WICKETS</p>
+
+            <div class="score-stats">
+                <div><span class="stat-label">Overs</span><strong id="overs">0.0</strong></div>
+                <div><span class="stat-label">Extras</span><strong id="extras">0</strong></div>
+            </div>
+            <div class="player-grid">
+                <div><span class="stat-label">Current batsman</span><strong id="batsman"></strong></div>
+                <div><span class="stat-label">Current bowler</span><strong id="bowler"></strong></div>
+            </div>
+            <div class="deliveries-section">
+                <h3>Recent deliveries <span class="muted">· latest on the right</span></h3>
+                <p id="recent-deliveries" class="deliveries"></p>
+                <p class="small-note">Last 12 events · W = wicket · Wd = wide · Nb = no ball</p>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            Refresh this page to see the latest saved score. Both pages must use the same browser, device and Live
+            Server origin.
+        </footer>
+    </main>
+    <script type="module"
+        src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+        integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw=="
+        data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
